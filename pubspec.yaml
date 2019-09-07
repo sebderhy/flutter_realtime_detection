@@ -27,6 +27,10 @@ dev_dependencies:
   camera: 0.4.0
 
   tflite: 1.0.4
+
+  image: ^2.1.4
+
+  # firebase_ml_vision:
   
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -51,6 +55,12 @@ flutter:
    - assets/mobilenet_v1_1.0_224.tflite
    - assets/mobilenet_v1_1.0_224.txt
    - assets/posenet_mv1_075_float_from_checkpoints.tflite
+   - assets/deeplabv3_257_mv_gpu.tflite
+   - assets/deeplabv3_257_mv_gpu.txt
+   - assets/flowers.tflite
+   - assets/flowers.txt
+   
+   
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

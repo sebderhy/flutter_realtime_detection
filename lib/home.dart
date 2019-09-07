@@ -37,6 +37,13 @@ class _HomePageState extends State<HomePage> {
         );
         break;
 
+      case deeplab:
+        res = await Tflite.loadModel(
+          model: "assets/deeplabv3_257_mv_gpu.tflite",
+          labels: "assets/deeplabv3_257_mv_gpu.txt",
+        );
+        break;
+
       case mobilenet:
         res = await Tflite.loadModel(
             model: "assets/mobilenet_v1_1.0_224.tflite",
@@ -46,6 +53,18 @@ class _HomePageState extends State<HomePage> {
       case posenet:
         res = await Tflite.loadModel(
             model: "assets/posenet_mv1_075_float_from_checkpoints.tflite");
+        break;
+
+      // case pix2pix:
+      //   res = await Tflite.loadModel(
+      //     model: "assets/deeplabv3_257_mv_gpu.tflite", // TODO: find the right TFlite model
+      //     labels: "assets/deeplabv3_257_mv_gpu.txt");
+      //   break;
+
+      case flowers:
+        res = await Tflite.loadModel(
+            model: "assets/flowers.tflite", 
+            labels: "assets/flowers.txt");
         break;
 
       default:
@@ -89,8 +108,20 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () => onSelect(yolo),
                   ),
                   RaisedButton(
+                    child: const Text(deeplab),
+                    onPressed: () => onSelect(deeplab),
+                  ),
+                  // RaisedButton(
+                  //   child: const Text(pix2pix),
+                  //   onPressed: () => onSelect(pix2pix),
+                  // ),
+                  RaisedButton(
                     child: const Text(mobilenet),
                     onPressed: () => onSelect(mobilenet),
+                  ),
+                  RaisedButton(
+                    child: const Text(flowers),
+                    onPressed: () => onSelect(flowers),
                   ),
                   RaisedButton(
                     child: const Text(posenet),

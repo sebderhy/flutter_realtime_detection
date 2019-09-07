@@ -72,7 +72,7 @@ class BndBox extends StatelessWidget {
     List<Widget> _renderStrings() {
       double offset = -10;
       return results.map((re) {
-        offset = offset + 14;
+        offset = offset + 44;
         return Positioned(
           left: 10,
           top: offset,
@@ -135,7 +135,7 @@ class BndBox extends StatelessWidget {
     }
 
     return Stack(
-      children: model == mobilenet
+      children: model == mobilenet || model == flowers 
           ? _renderStrings()
           : model == posenet ? _renderKeypoints() : _renderBoxes(),
     );
